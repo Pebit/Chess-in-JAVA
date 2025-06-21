@@ -1,4 +1,4 @@
-package Constants;
+package constants;
 
 public class Colors {
     public static int GREY = 2; // just for example of more colors / for possible future updates of the app

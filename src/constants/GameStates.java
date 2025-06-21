@@ -1,4 +1,4 @@
-package Constants;
+package constants;
 
 public class GameStates {
     public static int CHECKMATE = -1;

@@ -1,8 +1,8 @@
-package Board;
-import Constants.Colors;
-import Constants.GameStates;
-import pieces.*;
-import Constants.Pieces;
+package chess.board;
+import constants.Colors;
+import constants.GameStates;
+import chess.pieces.*;
+import constants.Pieces;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,8 +13,8 @@ public class Board {
     public static final int BOARD_WIDTH = 8;
     public static final int BOARD_HEIGHT = 8;
 
-    private final Map<Position, Piece> board = new HashMap<>();
-    
+    private Map<Position, Piece> board = new HashMap<>();
+
     public Board() {
         // the chess table is read from left to right, down to up.
         // kings
@@ -27,6 +27,72 @@ public class Board {
         board.put(new Position(5, 7), new Queen(Pieces.QUEEN.getValue(), Colors.WHITE));
 
 
+    }
+    public Board(Map<Position, Piece> board){
+        this.board = board;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder boardSB = new StringBuilder();
+        for (int row = BOARD_HEIGHT - 1; row >= 0; row--) {
+            for (int col = 0; col < BOARD_WIDTH; col++) {
+                Piece piece = board.get(new Position(row, col));
+                if (piece == null) {
+                    boardSB.append("0");
+                } else {
+                    if(piece.getColor() == Colors.WHITE){ boardSB.append(piece.getSymbol());}
+                    else boardSB.append(piece.getSymbol().toLowerCase());
+                }
+            }
+        }
+        return boardSB.toString();
+    }
+
+    public static Board fromString(String boardStr){
+        Map<Position, Piece> board = new HashMap<>();
+
+        int index = 0;
+        for (int row = Board.BOARD_HEIGHT - 1; row >= 0; row--) {
+            for (int col = 0; col < Board.BOARD_WIDTH; col++) {
+                char symbol = boardStr.charAt(index);
+                index++;
+
+                if (symbol == '0') continue;
+                int color = Character.isUpperCase(symbol) ? Colors.WHITE : Colors.BLACK;
+                char pieceChar = Character.toUpperCase(symbol);
+
+                Piece piece = null;
+
+                switch (pieceChar) {
+                    case 'K':
+                        piece = new King(Pieces.KING.getValue(), color);
+                        break;
+                    case 'Q':
+                        piece = new Queen(Pieces.QUEEN.getValue(), color);
+                        break;
+                    case 'R':
+                        piece = new Rook(Pieces.ROOK.getValue(), color);
+                        break;
+                    case 'B':
+                        piece = new Bishop(Pieces.BISHOP.getValue(), color);
+                        break;
+                    case 'N':
+                        piece = new Knight(Pieces.KNIGHT.getValue(), color);
+                        break;
+                    case 'P':
+                        piece = new Pawn(Pieces.PAWN.getValue(), color);
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Invalid piece symbol: " + symbol);
+                }
+
+                Position pos = new Position(row, col);
+                board.put(pos, piece);
+            }
+        }
+
+        return new Board(board);
     }
 
     public void showBoard() {
@@ -389,6 +455,7 @@ public class Board {
         }
 
     }
+
     public Piece getPiece(Position position){
         return board.get(position);
     }

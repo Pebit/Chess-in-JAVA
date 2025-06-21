@@ -1,0 +1,110 @@
+//DEFAULT BOARD
+        // placing ROOKS
+        board.put(new Position(0, 0), new Rook(chess.pieces.ROOK.getValue(), Colors.WHITE));
+        board.put(new Position(0, BOARD_WIDTH - 1), new Rook(chess.pieces.ROOK.getValue(), Colors.WHITE));
+        board.put(new Position(BOARD_HEIGHT - 1, 0), new Rook(chess.pieces.ROOK.getValue(), Colors.BLACK));
+        board.put(new Position(BOARD_HEIGHT - 1, BOARD_WIDTH - 1), new Rook(chess.pieces.ROOK.getValue(), Colors.BLACK));
+
+        // placing KNIGHTS
+        board.put(new Position(0, 1), new Knight(chess.pieces.KNIGHT.getValue(), Colors.WHITE));
+        board.put(new Position(0, BOARD_WIDTH - 2), new Knight(chess.pieces.KNIGHT.getValue(), Colors.WHITE));
+        board.put(new Position(BOARD_HEIGHT - 1, 1), new Knight(chess.pieces.KNIGHT.getValue(), Colors.BLACK));
+        board.put(new Position(BOARD_HEIGHT - 1, BOARD_WIDTH - 2), new Knight(chess.pieces.KNIGHT.getValue(), Colors.BLACK));
+
+        // placing BISHOPS
+        board.put(new Position(0, 2), new Bishop(chess.pieces.BISHOP.getValue(), Colors.WHITE));
+        board.put(new Position(0, BOARD_HEIGHT - 3), new Bishop(chess.pieces.BISHOP.getValue(), Colors.WHITE));
+        board.put(new Position(BOARD_HEIGHT - 1, 2), new Bishop(chess.pieces.BISHOP.getValue(), Colors.BLACK));
+        board.put(new Position(BOARD_HEIGHT - 1, BOARD_HEIGHT - 3), new Bishop(chess.pieces.BISHOP.getValue(), Colors.BLACK));
+
+        // placing KINGS
+        board.put(new Position(0, 4), new King(chess.pieces.KING.getValue(), Colors.WHITE));
+        board.put(new Position(BOARD_HEIGHT - 1, 4), new King(chess.pieces.KING.getValue(), Colors.BLACK));
+
+        // placing QUEENS
+        board.put(new Position(0, 3), new Queen(chess.pieces.QUEEN.getValue(), Colors.WHITE));
+        board.put(new Position(BOARD_HEIGHT - 1, 3), new Queen(chess.pieces.QUEEN.getValue(), Colors.BLACK));
+
+        // placing PAWNS
+        for (int col = 0; col < BOARD_HEIGHT; col++) {
+            board.put(new Position(1, col), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+            board.put(new Position(BOARD_HEIGHT - 2, col), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        }
+
+// PAWN TEST
+        board.put(new Position(1, 1), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        board.put(new Position(1, 2), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        board.put(new Position(2, 1), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(3, 2), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(4, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        board.put(new Position(4, 3), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        ((Pawn)board.get(new Position(4, 3))).setEnPassant(true);
+        board.put(new Position(5, 5), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(1, 7), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+
+// KNIGHT TEST
+        // Placing the Knight
+        board.put(new Position(3, 4), new Knight(chess.pieces.KNIGHT.getValue(), Colors.WHITE));
+
+        // Placing BLACK chess.pieces in KNIGHT range
+        board.put(new Position(2, 2), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(1, 3), new King(chess.pieces.KING.getValue(), Colors.BLACK));
+
+        // Placing WHITE chess.pieces in KNIGHT range
+        board.put(new Position(4, 2), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        board.put(new Position(5, 5), new Bishop(chess.pieces.BISHOP.getValue(), Colors.WHITE));
+        board.put(new Position(2, 6), new Queen(chess.pieces.QUEEN.getValue(), Colors.WHITE));
+// BISHOP TEST
+        // placing bishop
+        board.put(new Position(3, 4), new Bishop(chess.pieces.BISHOP.getValue(), Colors.WHITE));
+
+        // adding friendly obstacles
+        board.put(new Position(2, 3), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        board.put(new Position(5, 2), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+
+        //adding enemy obstacles
+        board.put(new Position(4, 5), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(5, 6), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(6, 7), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+
+        // bishop line should be clear on south-east
+// ROOK TEST
+        // placing THE ROOOOOOK
+        board.put(new Position(4, 4), new Rook(chess.pieces.ROOK.getValue(), Colors.WHITE));
+        // placing friendly obstacle
+        board.put(new Position(4, 2), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        // placing enemy obstacles
+        board.put(new Position(1, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(5, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(6, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+// QUEEN TEST
+        // placing THE QUEEN
+        board.put(new Position(4, 4), new Queen(chess.pieces.QUEEN.getValue(), Colors.WHITE));
+        // placing friendly obstacle
+        board.put(new Position(4, 2), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        board.put(new Position(7, 1), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        // placing enemy obstacles
+        board.put(new Position(1, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(5, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(6, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(7, 7), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(6, 6), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(3, 3), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+// KING TEST
+        // king
+        board.put(new Position(4, 4), new King(chess.pieces.KING.getValue(), Colors.WHITE));
+        // friendly obstacles
+        board.put(new Position(4, 5), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        board.put(new Position(5, 5), new Pawn(chess.pieces.PAWN.getValue(), Colors.WHITE));
+        // enemy obstacles
+        board.put(new Position(5, 4), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+        board.put(new Position(3, 3), new Pawn(chess.pieces.PAWN.getValue(), Colors.BLACK));
+// LegalMoves CHECK test
+        // kings
+        board.put(new Position(6, 7), new King(chess.pieces.KING.getValue(), Colors.WHITE));
+        board.put(new Position(2, 4), new King(chess.pieces.KING.getValue(), Colors.BLACK));
+        // black chess.pieces
+        board.put(new Position(3, 5), new Rook(chess.pieces.ROOK.getValue(), Colors.BLACK));
+        board.put(new Position(0, 7), new Rook(chess.pieces.ROOK.getValue(), Colors.BLACK));
+        // white defending queen
+        board.put(new Position(5, 7), new Queen(chess.pieces.QUEEN.getValue(), Colors.WHITE));

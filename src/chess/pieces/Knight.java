@@ -1,6 +1,6 @@
-package pieces;
+package chess.pieces;
 
-import Constants.Pieces;
+import constants.Pieces;
 
 public class Knight extends Piece{
     @Override

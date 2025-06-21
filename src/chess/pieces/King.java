@@ -1,21 +1,21 @@
-package pieces;
+package chess.pieces;
 
-import Constants.Pieces;
+import constants.Pieces;
 
-public class Rook extends Piece{
+public class King extends Piece{
     private boolean moved = false;
 
     @Override
     public String getSymbol() {
-        return Pieces.ROOK.getSymbol();
+        return Pieces.KING.getSymbol();
     }
-    public Rook(int value, int color) {
+    public King(int value, int color) {
         super(value, color);
     }
+
     public void moved(){
         this.moved = true;
     }
-
     public boolean hasMoved(){
         return this.moved;
     }

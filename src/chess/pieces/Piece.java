@@ -1,7 +1,7 @@
-package pieces;
+package chess.pieces;
 
-import Board.Position;
-import Constants.Colors;
+import chess.board.Position;
+import constants.Colors;
 
 import java.util.ArrayList;
 import java.util.List;

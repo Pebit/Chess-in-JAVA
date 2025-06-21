@@ -1,4 +1,4 @@
-package Board;
+package chess.board;
 
 public class Position {
     private final int row;

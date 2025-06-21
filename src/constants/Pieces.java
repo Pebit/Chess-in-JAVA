@@ -1,4 +1,4 @@
-package Constants;
+package constants;
 
 public enum Pieces {
     PAWN(1, "P"), KNIGHT(3, "N"), BISHOP(3, "B"), ROOK(5, "R"),
