@@ -1,8 +1,6 @@
 # Chess in Java
 This is a basic console-based Chess game written in Java.
 
-The project was initially focused on implementing core Chess mechanics correctly.
-
 Currently, the game does **not** have a graphical interface. Instead, the board is printed to the console using standard Chess notation symbols:
 
 - **White** pieces are represented by **uppercase** letters (e.g., _K_ for _King_, _P_ for _Pawn_).
