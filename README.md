@@ -1,7 +1,7 @@
 # Chess in Java
 This is a basic console-based Chess game written in Java.
 
-The project was initially focused on implementing core Chess mechanics correctly. After that, the plan is to introduce a special "Duck" piece that can be moved after every turn to block the opponent, adding a unique twist to standard gameplay.
+The project was initially focused on implementing core Chess mechanics correctly.
 
 Currently, the game does **not** have a graphical interface. Instead, the board is printed to the console using standard Chess notation symbols:
 
@@ -16,6 +16,13 @@ The internal board is an 8x8 grid, with row and column indices from 0 to 7. Posi
 ![WhatsApp Image 2025-04-28 at 21 52 22_8fcc3367](https://github.com/user-attachments/assets/b504eb44-8ff9-40e2-9c45-6830c2f92d64)
 
 When playing the game, however, you will input moves using **standard chess notation** (for example: _e2 e4_).
+
+## Persistence (save functions)
+The game now has automatic saving functions. 
+The game will ask you for login or player creation when it is run and will load the player from the database/ add them to the database.
+Wins and losses are now being tracked for each player, along with their names, and passwords.
+If ia board is left mid-game it will save the board state and you can hop back to where you left off by typing "/continue" instead of "/new_game" in the console (these prompts appear in-game aswell of course)
+The games are being saved once when they are started and updated with the winner, time ended and final board states when they end!
 
 ## How to Run
 To run this program:
