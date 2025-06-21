@@ -18,11 +18,11 @@ The internal board is an 8x8 grid, with row and column indices from 0 to 7. Posi
 When playing the game, however, you will input moves using **standard chess notation** (for example: _e2 e4_).
 
 ## Persistence (save functions)
-The game now has automatic saving functions. 
-The game will ask you for login or player creation when it is run and will load the player from the database/ add them to the database.
-Wins and losses are now being tracked for each player, along with their names, and passwords.
-If ia board is left mid-game it will save the board state and you can hop back to where you left off by typing "/continue" instead of "/new_game" in the console (these prompts appear in-game aswell of course)
-The games are being saved once when they are started and updated with the winner, time ended and final board states when they end!
+The game now has automatic saving functions. <br>
+The game will ask you for login or player creation when it is run and will load the player from the database/ add them to the database. <br>
+Wins and losses are now being tracked for each player, along with their names, and passwords. <br>
+If ia board is left mid-game it will save the board state and you can hop back to where you left off by typing "/continue" instead of "/new_game" in the console (these prompts appear in-game aswell of course) <br>
+The games are being saved once when they are started and updated with the winner, time ended and final board states when they end! <br>
 
 ## How to Run
 To run this program:
